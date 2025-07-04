@@ -1,11 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <meta name="description"
+        content="Home page for WDD231: This assignment demonstrates prerequisite knowledge by applying HTML, CSS, and JavaScript to the design and development of my course home page.">
+    <meta name="author" content="Edward Kenneth Badiola">
+    <title>WDD231 | Home</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="images/logo.svg" alt="Site Logo">
+            <span>WDD231 Student Page</span>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Chamber Project</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="about-photo-container">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm Ed Badiola from the Philippines. I'm a student at BYU and I'm currently learning web
+                    development. I enjoy doing
+                    creative things like drawing, music, and storytelling. I also like watching movies, working with
+                    people, and learning
+                    new things.
+                </p>
+            </section>
+
+            <section class="photo">
+                <h2>Student Photo</h2>
+                <img src="images/profile.jpg" alt="Student Photo">
+            </section>
+        </div>
+
+        <section class="courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="filters">
+                <button data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
+            </div>
+            <div id="course-list"></div>
+            <p id="total-credits"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/edbadiola" target="_blank">
+                <img src="images/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/ed-badiola-10a037253/" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="#">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+        </div>
+        <p>&copy; <span id="year"></span> Edward Kenneth Badiola • Borongan Philippines 🌴🌊</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
+
 </html>
