@@ -10,7 +10,6 @@ nav ul {
     gap: 2rem;
     padding: 0;
     margin: 0;
-
 }
 
 nav ul li {
@@ -31,16 +30,30 @@ nav ul li a:hover {
     background-color: var(--accent-color);
 }
 
+/* ✅ Hero Section */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
 }
 
+/* ✅ Fade-in only, no movement */
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    animation: fadeIn 3s ease-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .cta-button {

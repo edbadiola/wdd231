@@ -5,7 +5,13 @@
     --accent-color: #047204;
     --card-bg: #ffffff;
     --border-radius: 10px;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -13,6 +19,15 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family);
 }
 
 header,
