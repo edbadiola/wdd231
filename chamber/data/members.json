@@ -1,0 +1,60 @@
+{
+    "members": [
+        {
+            "name": "Sariwa Café",
+            "address": "Rizal Ave, Borongan City",
+            "phone": "(055) 560-1111",
+            "website": "https://sariwacafe.ph",
+            "image": "sariwa.jpg",
+            "membership": 3
+        },
+        {
+            "name": "Eastern Tech Solutions",
+            "address": "Borongan Tech Park",
+            "phone": "(055) 560-2222",
+            "website": "https://easterntech.ph",
+            "image": "etech.jpg",
+            "membership": 2
+        },
+        {
+            "name": "Baybayon Resort",
+            "address": "Barangay Baybay, Borongan",
+            "phone": "(055) 560-3333",
+            "website": "https://baybayonresort.ph",
+            "image": "baybayon.jpg",
+            "membership": 1
+        },
+        {
+            "name": "Borongan Print Hub",
+            "address": "Downtown, Borongan",
+            "phone": "(055) 560-4444",
+            "website": "https://printborongan.ph",
+            "image": "print.jpg",
+            "membership": 1
+        },
+        {
+            "name": "Tatak Borongan",
+            "address": "Cultural Center, Borongan",
+            "phone": "(055) 560-5555",
+            "website": "https://tatakborongan.ph",
+            "image": "tatak.jpg",
+            "membership": 2
+        },
+        {
+            "name": "Eastern Samar Dental",
+            "address": "Capitol Site, Borongan",
+            "phone": "(055) 560-6666",
+            "website": "https://eastsamardental.ph",
+            "image": "dental.jpg",
+            "membership": 3
+        },
+        {
+            "name": "Lokal Mart",
+            "address": "Barangay Songco, Borongan",
+            "phone": "(055) 560-7777",
+            "website": "https://lokalmart.ph",
+            "image": "lokal.jpg",
+            "membership": 1
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Borongan Chamber of Commerce business directory." />
+    <meta name="author" content="Edward Badiola" />
+    <meta property="og:title" content="Borongan Chamber of Commerce" />
+    <meta property="og:description" content="Explore local businesses and connect with the Borongan community." />
+    <meta property="og:image" content="images/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com/chamber/directory.html" />
+
+    <title>Borongan Chamber | Directory</title>
+    <link rel="icon" href="images/logo.svg" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)" />
+
+    <script src="scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.svg" alt="Borongan Chamber of Commerce Logo" />
+            <h1>Borongan Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <button id="menu">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 600px)" />
+                <img src="images/hero-small.webp" alt="Borongan City View" class="hero-img" />
+            </picture>
+            <button class="cta-button">Keynote Tickets</button>
+        </section>
+
+        <section class="section-wrapper">
+            <section class="events">
+                <h2>Upcoming Events</h2>
+                <p>July 18 - Local Business Fair</p>
+                <p>August 1 - Leadership Workshop</p>
+                <p>August 10 - Community Night Market</p>
+            </section>
+
+            <!-- ✅ Static (made-up) weather section -->
+            <section class="weather">
+                <h2>Current Weather</h2>
+                <p id="current-temp">31°C</p>
+                <p id="weather-desc">Partly Cloudy</p>
+            </section>
+
+            <section class="forecast">
+                <h2>3-Day Forecast</h2>
+                <ul id="forecast-list">
+                    <li>Saturday: 30°C, Sunny</li>
+                    <li>Sunday: 28°C, Showers</li>
+                    <li>Monday: 29°C, Cloudy</li>
+                </ul>
+            </section>
+        </section>
+
+        <section class="view-toggle">
+            <button id="gridView">Grid View</button>
+            <button id="listView">List View</button>
+        </section>
+
+        <section id="directory" class="grid-view">
+            <!-- Member cards will be added by JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Borongan Chamber of Commerce</strong></p>
+            <p>Brgy. Songco, Borongan City, Eastern Samar</p>
+            <p>Email: info@boronganchamber.ph</p>
+            <p>Phone: (055) 560-1234</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/edbadiola" target="_blank">
+                <img src="images/github.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/ed-badiola-10a037253/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook">
+            </a>
+        </div>
+        <p>WDD231 Class Project | Edward Badiola</p>
+        <p>&copy; <span id="year"></span> Borongan Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
