@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Borongan Chamber of Commerce business directory." />
     <meta name="author" content="Edward Badiola" />
@@ -17,12 +16,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
     <link rel="icon" href="images/logo.svg" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/small.css" />
     <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)" />
-
     <script src="scripts/scripts.js" defer></script>
 </head>
 
@@ -30,7 +27,6 @@
     <header>
         <div class="logo-title">
             <img src="images/logo.svg" alt="Borongan Chamber of Commerce Logo" />
-            <h1>Borongan Chamber of Commerce</h1>
         </div>
         <nav>
             <button id="menu">☰</button>
@@ -49,7 +45,12 @@
                 <source srcset="images/hero-large.webp" media="(min-width: 600px)" />
                 <img src="images/hero-small.webp" alt="Borongan City View" class="hero-img" />
             </picture>
-            <button class="cta-button">Keynote Tickets</button>
+
+            <div class="hero-overlay">
+                <h1>Borongan Chamber of Commerce</h1>
+                <p class="hero-quote">“Empowering Local Businesses for a Better Tomorrow”</p>
+                <button class="cta-button">Get Your Keynote Tickets</button>
+            </div>
         </section>
 
         <section class="section-wrapper">
@@ -60,7 +61,6 @@
                 <p>August 10 - Community Night Market</p>
             </section>
 
-            <!-- ✅ Static (made-up) weather section -->
             <section class="weather">
                 <h2>Current Weather</h2>
                 <p id="current-temp">31°C</p>

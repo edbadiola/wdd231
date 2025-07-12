@@ -91,19 +91,49 @@ nav ul.open {
     object-position: center;
 }
 
-.cta-button {
+/* NEW: Hero Overlay */
+.hero-overlay {
     position: absolute;
-    left: 50%;
-    bottom: 2rem;
-    transform: translateX(-50%);
-    padding: 0.75rem 1.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(30, 58, 95, 0.5);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-overlay h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    font-weight: 800;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay .hero-quote {
     font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+.cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
     background-color: var(--accent-color);
     color: white;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     z-index: 2;
+    position: static;
+    transform: none;
 }
 
 .view-toggle {
@@ -173,7 +203,6 @@ footer p {
     opacity: 0.7;
 }
 
-/* Extra Content Sections */
 .section-wrapper {
     padding: 1rem;
     display: flex;
@@ -196,12 +225,4 @@ footer p {
 
 .forecast li {
     margin-bottom: 0.5rem;
-}
-
-/* Optional: Responsive CTA Button Sizing */
-@media screen and (max-width: 480px) {
-    .cta-button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-    }
 }
