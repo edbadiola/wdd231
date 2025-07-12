@@ -7,20 +7,6 @@ document.getElementById("menu").addEventListener("click", () => {
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// View toggle
-const gridBtn = document.getElementById("gridView");
-const listBtn = document.getElementById("listView");
-const directory = document.getElementById("directory");
-
-gridBtn.addEventListener("click", () => {
-    directory.classList.add("grid-view");
-    directory.classList.remove("list-view");
-});
-
-listBtn.addEventListener("click", () => {
-    directory.classList.add("list-view");
-    directory.classList.remove("grid-view");
-});
 
 // Load members from JSON
 async function loadMembers() {
