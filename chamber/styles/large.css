@@ -30,7 +30,6 @@ nav ul li a:hover {
     background-color: var(--accent-color);
 }
 
-/* ✅ Hero Section */
 .hero {
     position: relative;
     height: 100vh;
