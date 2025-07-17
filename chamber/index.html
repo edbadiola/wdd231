@@ -8,7 +8,7 @@
     <meta name="author" content="Edward Badiola" />
     <meta property="og:title" content="Borongan Chamber of Commerce" />
     <meta property="og:description" content="Explore local businesses and connect with the Borongan community." />
-    <meta property="og:image" content="chamber\images\hero-small.webp" />
+    <meta property="og:image" content="chamber/images/hero-small.webp" />
     <meta property="og:url" content="https://edbadiola.github.io/wdd231/chamber/directory.html" />
 
     <title>Borongan Chamber | Directory</title>
@@ -49,7 +49,7 @@
             <div class="hero-overlay">
                 <h1>Borongan Chamber of Commerce</h1>
                 <p class="hero-quote">“Empowering Local Businesses for a Better Tomorrow”</p>
-                <button class="cta-button">Get Your Keynote Tickets</button>
+                <button class="cta-button">Join our Community</button>
             </div>
         </section>
 
@@ -62,18 +62,23 @@
             </section>
 
             <section class="weather">
-                <h2>Current Weather</h2>
-                <p id="current-temp">31°C</p>
-                <p id="weather-desc">Partly Cloudy</p>
+                <h2>Weather in <span id="city-name">Borongan</span></h2>
+                <div id="current-weather">
+                    <img id="weather-icon" alt="Weather icon" />
+                    <p><strong>Temp:</strong> <span id="current-temp">--</span> °C</p>
+                    <p id="weather-desc">Loading...</p>
+                </div>
+            </section>
+            
+            <section class="forecast">
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-days" class="forecast-days"></div>
             </section>
 
-            <section class="forecast">
-                <h2>3-Day Forecast</h2>
-                <ul id="forecast-list">
-                    <li>Saturday: 30°C, Sunny</li>
-                    <li>Sunday: 28°C, Showers</li>
-                    <li>Monday: 29°C, Cloudy</li>
-                </ul>
+
+            <section class="spotlights">
+                <h2>Member Spotlights</h2>
+                <div id="spotlight-container" class="spotlight-grid"></div>
             </section>
         </section>
 

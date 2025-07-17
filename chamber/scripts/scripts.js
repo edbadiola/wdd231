@@ -18,9 +18,10 @@ async function loadMembers() {
 }
 loadMembers();
 
-// Grid view function (with images)
+// Grid view function
 function displayGridView() {
     const directory = document.getElementById("directory");
+    if (!directory) return;
     directory.classList.add("grid-view");
     directory.classList.remove("list-view");
     directory.innerHTML = "";
@@ -40,9 +41,9 @@ function displayGridView() {
     });
 }
 
-// List view function (no images or cards)
 function displayListView() {
     const directory = document.getElementById("directory");
+    if (!directory) return;
     directory.classList.add("list-view");
     directory.classList.remove("grid-view");
     directory.innerHTML = "";
@@ -61,6 +62,87 @@ function displayListView() {
     });
 }
 
-// Button listeners
-document.getElementById("gridBtn").addEventListener("click", displayGridView);
-document.getElementById("listBtn").addEventListener("click", displayListView);
+// Button listeners (only if they exist on the page)
+const gridBtn = document.getElementById("gridBtn");
+const listBtn = document.getElementById("listBtn");
+if (gridBtn && listBtn) {
+    gridBtn.addEventListener("click", displayGridView);
+    listBtn.addEventListener("click", displayListView);
+}
+
+// Weather Configuration
+const apiKey = 'e7769e4d8c7a4e031f140cfc56e410e4';
+const lat = 11.6080;
+const lon = 125.4329;
+
+const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+async function fetchWeatherData() {
+    try {
+        // Current weather
+        const response = await fetch(currentWeatherURL);
+        if (!response.ok) throw new Error("Failed to fetch weather data");
+
+        const data = await response.json();
+        const temperature = data.main?.temp;
+        const iconCode = data.weather?.[0]?.icon;
+        const description = data.weather?.[0]?.description;
+        const cityName = data.name;
+
+        document.getElementById("current-temp").textContent = `${temperature.toFixed(1)}`;
+        document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        document.getElementById("weather-icon").alt = description;
+        document.getElementById("weather-desc").textContent = description;
+        document.getElementById("city-name").textContent = cityName;
+
+    } catch (error) {
+        console.error("Weather error:", error.message);
+        document.getElementById("current-temp").textContent = "N/A";
+    }
+}
+
+async function fetchForecast() {
+    try {
+        const response = await fetch(forecastURL);
+        if (!response.ok) throw new Error("Failed to fetch forecast");
+
+        const data = await response.json();
+        const forecastContainer = document.getElementById("forecast-days");
+        forecastContainer.innerHTML = "";
+
+        const days = {};
+        data.list.forEach(item => {
+            const date = new Date(item.dt_txt);
+            const day = date.toLocaleDateString("en-US", { weekday: 'short' });
+            const hour = date.getHours();
+
+            if (hour === 12 && !days[day]) {
+                days[day] = item;
+            }
+        });
+
+        Object.entries(days).slice(0, 3).forEach(([day, item]) => {
+            const temp = item.main.temp.toFixed(1);
+            const icon = item.weather[0].icon;
+            const desc = item.weather[0].description;
+
+            const dayCard = document.createElement("div");
+            dayCard.innerHTML = `
+                <p><strong>${day}</strong></p>
+                <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" />
+                <p>${temp} °C</p>
+            `;
+            forecastContainer.appendChild(dayCard);
+        });
+
+    } catch (error) {
+        console.error("Forecast error:", error.message);
+    }
+}
+
+// Run weather functions when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    fetchWeatherData();
+    fetchForecast();
+});

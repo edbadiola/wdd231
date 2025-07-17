@@ -133,6 +133,15 @@ header {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Optional enhancement */
+.forecast-days {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 .forecast ul {
     list-style: disc;
     margin: 0;
@@ -142,3 +151,13 @@ header {
 .forecast li {
     margin-bottom: 0.4rem;
 }
+
+.weather img,
+.forecast img {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 4px;
+    width: 60px;
+    height: 60px;
+}
+

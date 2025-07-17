@@ -69,12 +69,10 @@ nav ul li a {
     font-size: 1.05rem;
     font-weight: 600;
     padding: 0.75rem 1.25rem;
-    /* More padding = easier to tap */
     border-radius: var(--border-radius);
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     min-width: 120px;
-    /* Helps make buttons consistent */
     text-align: center;
 }
 
@@ -83,7 +81,6 @@ nav ul li a:focus {
     background-color: var(--accent-color);
     color: white;
     transform: scale(1.03);
-    /* Slight zoom for feedback */
 }
 
 nav ul.open {
@@ -193,6 +190,15 @@ footer p {
     border-radius: var(--border-radius);
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional enhancement */
+.forecast-days {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .forecast ul {
