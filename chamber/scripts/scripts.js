@@ -141,12 +141,12 @@ async function fetchForecast() {
     }
 }
 
-// Run weather functions when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
     fetchWeatherData();
     fetchForecast();
 });
 
+// Spotlight filter
 function displaySpotlights() {
     const spotlightContainer = document.getElementById("spotlight-container");
 
@@ -174,13 +174,11 @@ function displaySpotlights() {
 }
 
 
-
-// After members are loaded, call this
 async function loadMembers() {
     const response = await fetch("data/members.json");
     const data = await response.json();
     members = data.members;
 
-    displayGridView(); // or remove this if not on directory.html
+    displayGridView(); 
     displaySpotlights();
 }
