@@ -61,6 +61,31 @@ nav ul {
     margin: 1rem 0;
 }
 
+nav ul li a {
+    display: inline-block;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    /* More padding = easier to tap */
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    /* Helps make buttons consistent */
+    text-align: center;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: var(--accent-color);
+    color: white;
+    transform: scale(1.03);
+    /* Slight zoom for feedback */
+}
+
 nav ul.open {
     display: flex;
 }

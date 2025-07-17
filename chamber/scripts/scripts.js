@@ -40,7 +40,7 @@ function displayGridView() {
     });
 }
 
-// List view function (no images)
+// List view function (no images or cards)
 function displayListView() {
     const directory = document.getElementById("directory");
     directory.classList.add("list-view");
@@ -48,16 +48,16 @@ function displayListView() {
     directory.innerHTML = "";
 
     members.forEach(member => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+        const item = document.createElement("div");
+        item.classList.add("list-item");
 
-        card.innerHTML = `
+        item.innerHTML = `
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
             <a href="${member.website}" target="_blank">Visit Website</a>
         `;
-        directory.appendChild(card);
+        directory.appendChild(item);
     });
 }
 
