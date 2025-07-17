@@ -5,16 +5,18 @@
             "address": "Rizal Ave, Borongan City",
             "phone": "(055) 560-1111",
             "website": "https://sariwacafe.ph",
-            "image": "sariwa.jpg",
-            "membership": 3
+            "image": "sariwa.webp",
+            "membership": 3,
+            "highlight": "Sariwa Café has become a cornerstone of the community, known for sourcing its ingredients directly from local farmers and creating a sustainable farm-to-cup coffee experience that supports regional agriculture and livelihoods."
         },
         {
             "name": "Eastern Tech Solutions",
             "address": "Borongan Tech Park",
             "phone": "(055) 560-2222",
             "website": "https://easterntech.ph",
-            "image": "etech.jpg",
-            "membership": 2
+            "image": "etech.webp",
+            "membership": 2,
+            "highlight": "Eastern Tech Solutions is a leading IT company in the region, recognized for providing innovative digital solutions and helping over 100 small businesses modernize operations and boost online presence across Eastern Samar."
         },
         {
             "name": "Baybayon Resort",
@@ -37,16 +39,18 @@
             "address": "Cultural Center, Borongan",
             "phone": "(055) 560-5555",
             "website": "https://tatakborongan.ph",
-            "image": "tatak.jpg",
-            "membership": 2
+            "image": "tatak.webp",
+            "membership": 2,
+            "highlight": "Tatak Borongan has made a national name for itself by uplifting local artisans, promoting cultural heritage, and showcasing Eastern Samar’s indigenous crafts at trade fairs and cultural exhibitions throughout the Philippines."
         },
         {
             "name": "Eastern Samar Dental",
             "address": "Capitol Site, Borongan",
             "phone": "(055) 560-6666",
             "website": "https://eastsamardental.ph",
-            "image": "dental.jpg",
-            "membership": 3
+            "image": "dental.webp",
+            "membership": 3,
+            "highlight": "Eastern Samar Dental has revolutionized access to dental care in the province through their mobile clinic initiative, bringing free services to remote barangays and championing public health for underserved communities."
         },
         {
             "name": "Lokal Mart",

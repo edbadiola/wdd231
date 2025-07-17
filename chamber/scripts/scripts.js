@@ -146,3 +146,41 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchWeatherData();
     fetchForecast();
 });
+
+function displaySpotlights() {
+    const spotlightContainer = document.getElementById("spotlight-container");
+
+    const eligibleMembers = members.filter(m => m.membership === 3 || m.membership === 2);
+    const randomMembers = eligibleMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+    randomMembers.forEach(member => {
+        const spotlight = document.createElement("div");
+        spotlight.classList.add("spotlight-banner");
+
+        spotlight.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name}" />
+            <div class="spotlight-info">
+                <h3>${member.name}</h3>
+                <p class="highlight">${member.highlight || "An outstanding member of our business community."}</p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Membership:</strong> ${member.membership === 3 ? "Gold" : "Silver"}</p>
+                <a href="${member.website}" target="_blank" class="cta-button">Visit Website</a>
+            </div>
+        `;
+
+        spotlightContainer.appendChild(spotlight);
+    });
+}
+
+
+
+// After members are loaded, call this
+async function loadMembers() {
+    const response = await fetch("data/members.json");
+    const data = await response.json();
+    members = data.members;
+
+    displayGridView(); // or remove this if not on directory.html
+    displaySpotlights();
+}

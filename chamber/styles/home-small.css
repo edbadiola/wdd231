@@ -208,3 +208,115 @@ footer p {
 .forecast li {
     margin-bottom: 0.5rem;
 }
+
+/* Spotlight section wrapper */
+.spotlights {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Center the spotlight section heading */
+.spotlight-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Container for all banners */
+.spotlight-banner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Each spotlight block */
+.spotlight-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Image */
+.spotlight-banner img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+/* Info text */
+.spotlight-info {
+    padding: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.spotlight-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.spotlight-info .highlight {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.spotlight-info p {
+    margin: 0.3rem 0;
+}
+
+.spotlight-info a.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.spotlight-info a.cta-button:hover {
+    background-color: #035703;
+}
+
+/* Side-by-side layout on desktop */
+@media (min-width: 768px) {
+    .spotlight-banner {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .spotlight-banner img,
+    .spotlight-info {
+        width: 50%;
+    }
+
+    .spotlight-info {
+        text-align: left;
+        padding-left: 2rem;
+    }
+
+    .spotlight-heading {
+        font-size: 2.4rem;
+    }
+}
