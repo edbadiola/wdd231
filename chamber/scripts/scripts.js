@@ -182,3 +182,50 @@ async function loadMembers() {
     displayGridView(); 
     displaySpotlights();
 }
+
+// Auto-fill timestamp on form load
+document.addEventListener("DOMContentLoaded", () => {
+    const timestampInput = document.getElementById("timestamp");
+    if (timestampInput) {
+        timestampInput.value = new Date().toISOString();
+    }
+
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    const modifiedElement = document.getElementById("lastModified");
+    if (modifiedElement) {
+        modifiedElement.textContent = document.lastModified;
+    }
+});
+
+// Modal functions
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // prevent background scroll
+    }
+}
+
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
+
+// Close modal when clicking outside of it
+window.addEventListener("click", function (event) {
+    document.querySelectorAll(".modal").forEach((modal) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    });
+});
+
+
