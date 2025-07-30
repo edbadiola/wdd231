@@ -19,9 +19,13 @@
     <link rel="icon" href="images/logo.svg" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/home-small.css" />
-    <link rel="stylesheet" href="styles/home-large.css" media="screen and (min-width: 600px)" />
-    <script src="scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="styles/home-large.css"  />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/medium.css" media= "screen and (minwidth: 38rem)" />
+    <link rel="stylesheet" href="styles/large.css" media= "screen and (minwidth: 64rem)" />
+    <script type="module" src="scripts/card.js"></script>
     
+
 </head>
 
 <body>
@@ -43,45 +47,35 @@
     <main>
         <section class="hero">
             <picture>
-                <source srcset="images/homelarge.webp" media="(min-width: 1600px)" />
-                <img src="images/homesmall.webp" alt="Borongan City View" class="hero-img" />
+                <source srcset="images/discoverylarge.webp" media="(min-width: 1600px)" />
+                <img src="images/discoverylarge.webp" alt="Borongan City View" class="hero-img" />
             </picture>
 
             <div class="hero-overlay">
-                <h1>Borongan Chamber of Commerce</h1>
-                <p class="hero-quote">“Empowering Local Businesses for a Better Tomorrow”</p>
+                <h1>Discovery</h1>
+                <p class="hero-quote">“Borongan is a city located on the eastern coast of the island of Samar in the Philippines. Known for its lush
+                forests, majestic rivers, and beautiful beaches, Borongan is rich in cultural heritage and natural beauty. It is
+                the capital of Eastern Samar and serves as a gateway to exploring the hidden gems of the region.”</p>
                 <button class="cta-button">Join our Community</button>
             </div>
         </section>
 
-        <section class="section-wrapper">
-            <section class="events">
-                <h2>Upcoming Events</h2>
-                <p>July 18 - Local Business Fair</p>
-                <p>August 1 - Leadership Workshop</p>
-                <p>August 10 - Community Night Market</p>
-            </section>
-
-            <section class="weather">
-                <h2>Weather in <span id="city-name">Borongan</span></h2>
-                <div id="current-weather">
-                    <img id="weather-icon" alt="Weather icon" />
-                    <p><strong>Temp:</strong> <span id="current-temp">--</span> °C</p>
-                    <p id="weather-desc">Loading...</p>
-                </div>
-            </section>
-
-            <section class="forecast">
-                <h2>3-Day Forecast</h2>
-                <div id="forecast-days" class="forecast-days"></div>
-            </section>
+        <section id="allplaces">
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
+            <div class="place-card"></div>
         </section>
 
-        <section class="spotlights">
-            <h2 class="spotlight-heading">Member Spotlights</h2>
-            <div id="spotlight-container" class="spotlight-banner-list"></div>
-        </section>
+
+
     </main>
+
+    <script src="scripts/scripts.js" defer></script>
 
     <footer>
         <div class="contact-info">
@@ -105,6 +99,7 @@
         <p>&copy; <span id="year"></span> Borongan Chamber of Commerce</p>
         <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
+
 </body>
 
 </html>
