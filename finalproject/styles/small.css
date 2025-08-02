@@ -149,6 +149,22 @@ nav ul.open {
     cursor: pointer;
 }
 
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    padding: 2rem;
+    height: 100%;
+}
+
+.des-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 footer p {
     margin: 0.3rem 0;
     font-size: 0.9rem;
