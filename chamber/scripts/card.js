@@ -7,14 +7,15 @@ places.forEach(place => {
     card.classList.add("place-card");
 
     card.innerHTML = `
-    <img src="images/${place.image}" alt="${place.title}" />
-    <div class="place-card-content">
-      <h2>${place.title}</h2>
-      <address>${place.address}</address>
-      <p>${place.description}</p>
-      <a href="#" class="learn-more-btn">Learn More</a>
-    </div>
-  `;
+  <img src="images/${place.image}" alt="${place.title}" loading="lazy" />
+  <div class="place-card-content">
+    <h2>${place.title}</h2>
+    <address>${place.address}</address>
+    <p>${place.description}</p>
+    <a href="#" class="learn-more-btn">Learn More</a>
+  </div>
+`;
+
 
     // Add event listener to open modal
     card.querySelector(".learn-more-btn").addEventListener("click", (e) => {
