@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Popcorn Film Diary home page." />
+    <meta name="author" content="Edward Badiola" />
+    <meta property="og:title" content="Popcorn Film Diary" />
+    <meta property="og:description"
+        content="Popcorn Rating Diary is a simple and personal space for movie lovers to log the films they've watched, write thoughts, give ratings, and revisit how their tastes evolve over time. Whether you’re a casual viewer or a deep film thinker, this site helps you track your cinematic journey with clarity and heart." />
+    <meta property="og:image" content="finalproject/images/hero.webp" />
+    <meta property="og:url" content="https://edbadiola.github.io/wdd231/finalproject/index.html" />
+
+    <title>Borongan Chamber | Directory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/logo.svg" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)" />
+    <script src="scripts/scripts.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.svg" alt="Borongan Chamber of Commerce Logo" />
+        </div>
+        <nav>
+            <button id="menu">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="entry,html">Add Entry</a></li>
+                <li><a href="librabry.html">Librabry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/hero.webp" media="(min-width: 1600px)" />
+                <img src="images/hero.webp" alt="Image of a Black Hole" class="hero-img" />
+            </picture>
+
+            <div class="hero-overlay">
+                <h1 id="movie-quote" class="hero-quote">Quote goes here...</h1>
+                <p id="movie-info" class="hero-info">Movie title (Year)</p>
+                <button class="cta-button">Create a Popcorn Account</button>
+            </div>
+
+
+        </section>
+
+        <div class="welcome">
+            <h2>Welcome to Popcorn Film Diary</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sint tempore, vitae culpa quibusdam
+                doloremque ab aliquam. Praesentium ut dolore perferendis cupiditate, nesciunt ea sapiente quo,
+                doloremque nulla mollitia aut.Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tenetur
+                officiis earum voluptatem sint impedit quisquam odit cupiditate? Quisquam eaque numquam possimus
+                deleniti at? Voluptates a officiis blanditiis labore quo..</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sint tempore, vitae culpa quibusdam
+                doloremque ab
+                aliquam. Praesentium ut dolore perferendis cupiditate, nesciunt ea sapiente quo, doloremque nulla
+                mollitia aut.Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Adipisci tenetur officiis earum voluptatem sint
+                impedit quisquam
+                odit cupiditate? Quisquam eaque numquam possimus deleniti at? Voluptates a officiis blanditiis labore
+                quo..</p>
+
+        </div>
+
+        <div class="list-by-grades">
+            <section>
+                <h2>Grade Categories</h2>
+                <p>Explore your rated films sorted by score.</p>
+            </section>
+            <section>
+                <h2>Top 100</h2>
+                <p>Your personal top 100 films based on rating, impact, and rewatch value.</p>
+            </section>
+            <section>
+                <h2>Genres Top 10</h2>
+                <p>Discover the top 10 highest-rated films in each genre you explore most.</p>
+                </sectiion>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Popcorn Film Diary</strong></p>
+            <p>Brgy. Songco, Borongan City, Eastern Samar</p>
+            <p>Email: info@popcorndiariess.ph</p>
+            <p>Phone: (055) 560-1234</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/edbadiola" target="_blank">
+                <img src="images/github.svg" alt="GitHub profile of Edward Badiola">
+            </a>
+            <a href="https://www.linkedin.com/in/ed-badiola-10a037253/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook">
+            </a>
+        </div>
+        <p>WDD231 Class Final Project | Edward Badiola</p>
+        <p>&copy; <span id="year"></span> Borongan Chamber of Commerce</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
