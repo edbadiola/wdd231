@@ -11,7 +11,7 @@
     <meta property="og:image" content="chamber/images/hero-small.webp" />
     <meta property="og:url" content="https://edbadiola.github.io/wdd231/chamber/directory.html" />
 
-    <title>Borongan Chamber | Directory</title>
+    <title>Borongan Chamber | Discover</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="styles/home-small.css" />
     <link rel="stylesheet" href="styles/home-large.css"  />
     <link rel="stylesheet" href="styles/small.css" />
-    <link rel="stylesheet" href="styles/medium.css" media= "screen and (minwidth: 38rem)" />
-    <link rel="stylesheet" href="styles/large.css" media= "screen and (minwidth: 64rem)" />
+    <link rel="stylesheet" href="styles/medium.css" media="screen and (min-width: 38rem)" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 64rem)" />
     <script type="module" src="scripts/card.js"></script>
     
 
@@ -60,22 +60,23 @@
             </div>
         </section>
 
-        <section id="allplaces">
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-            <div class="place-card"></div>
-        </section>
+        <section id="allplaces" class="grid"></section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title"></h2>
+                <address id="modal-address"></address>
+                <p id="modal-description"></p>
+                <img id="modal-image" src="" alt="" />
+            </div>
+        </div>
 
 
 
     </main>
 
-    <script src="scripts/scripts.js" defer></script>
+    <script src="scripts/scripts.js"></script>
 
     <footer>
         <div class="contact-info">

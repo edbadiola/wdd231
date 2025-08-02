@@ -1,30 +1,43 @@
 import { places } from '../data/places.mjs';
 
-const allCards = document.querySelectorAll('.place-card');
+const allPlaces = document.getElementById("allplaces");
 
-places.forEach((place, index) => {
-    if (index < allCards.length) {
-        const card = allCards[index];
+places.forEach(place => {
+    const card = document.createElement("div");
+    card.classList.add("place-card");
 
-        // Create image
-        const img = document.createElement('img');
-        img.src = `images/${place.image}`;
-        img.alt = place.title;
-        card.appendChild(img);
+    card.innerHTML = `
+    <img src="images/${place.image}" alt="${place.title}" />
+    <div class="place-card-content">
+      <h2>${place.title}</h2>
+      <address>${place.address}</address>
+      <p>${place.description}</p>
+      <a href="#" class="learn-more-btn">Learn More</a>
+    </div>
+  `;
 
-        // Title
-        const title = document.createElement('h2');
-        title.textContent = place.title;
-        card.appendChild(title);
+    // Add event listener to open modal
+    card.querySelector(".learn-more-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        document.getElementById("modal-title").textContent = place.title;
+        document.getElementById("modal-address").textContent = place.address;
+        document.getElementById("modal-description").textContent = place.description;
+        document.getElementById("modal-image").src = `images/${place.image}`;
+        document.getElementById("modal-image").alt = place.title;
+        document.getElementById("modal").style.display = "block";
+    });
 
-        // Address
-        const address = document.createElement('address');
-        address.textContent = place.address;
-        card.appendChild(address);
+    allPlaces.appendChild(card);
+});
 
-        // Description
-        const desc = document.createElement('p');
-        desc.textContent = place.description;
-        card.appendChild(desc);
+// Add these OUTSIDE the loop
+document.querySelector(".close-btn").addEventListener("click", () => {
+    document.getElementById("modal").style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
     }
 });
