@@ -140,3 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (el) el.style.display = "none";
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu');
+    if (!menuBtn) return;
+
+    // Find the navigation ul inside the same nav container
+    const navList = menuBtn.closest('nav').querySelector('ul.navigation');
+    if (!navList) return;
+
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+});
+
+

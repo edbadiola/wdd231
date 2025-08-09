@@ -31,7 +31,7 @@
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="entry.html">Add Entry</a></li>
-                <li><a href="library.html" class="active">Library</a></li>
+                <li><a href="library.html">Library</a></li>
             </ul>
         </nav>
     </header>
@@ -123,6 +123,9 @@
         </div>
         <p>WDD231 Class Final Project | Edward Badiola</p>
     </footer>
+    <script>document.getElementById("menu").addEventListener("click", () => {
+            document.querySelector(".navigation").classList.toggle("open");
+        });</script>
 </body>
 
 </html>

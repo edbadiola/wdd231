@@ -28,7 +28,7 @@
             <button id="menu">☰</button>
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="entry.html" class="active">Add Entry</a></li>
+                <li><a href="entry.html">Add Entry</a></li>
                 <li><a href="library.html">Library</a></li>
             </ul>
         </nav>
@@ -138,6 +138,10 @@
     </footer>
 
     <script>
+        document.getElementById("menu").addEventListener("click", () => {
+                document.querySelector(".navigation").classList.toggle("open");
+            });
+            
         const form = document.getElementById("film-form");
         const dialog = document.getElementById("entryDialog");
         const dialogContent = document.getElementById("dialogContent");
