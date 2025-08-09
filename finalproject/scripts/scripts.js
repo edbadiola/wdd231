@@ -38,3 +38,105 @@ window.addEventListener('scroll', () => {
     heroImg.style.transform = `scale(${scale})`;
 });
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Get all the containers
+    const top100List = document.getElementById("top100-list");
+    const genreDrama = document.getElementById("genre-drama");
+    const genreComedy = document.getElementById("genre-comedy");
+    const genreHorror = document.getElementById("genre-horror");
+    const genreAction = document.getElementById("genre-action");
+    const genreScifi = document.getElementById("genre-scifi");
+    const allFilmsList = document.getElementById("all-films-list");
+
+    // Load entries from localStorage
+    let entries = JSON.parse(localStorage.getItem("filmEntries") || "[]");
+
+    if (entries.length === 0) {
+        allFilmsList.innerHTML = "<p>No films logged yet.</p>";
+        top100List.innerHTML = "<p>No films logged yet.</p>";
+        genreDrama.innerHTML = "<p>No films logged yet.</p>";
+        genreComedy.innerHTML = "<p>No films logged yet.</p>";
+        genreHorror.innerHTML = "<p>No films logged yet.</p>";
+        genreAction.innerHTML = "<p>No films logged yet.</p>";
+        genreScifi.innerHTML = "<p>No films logged yet.</p>";
+        return; // no data to show
+    }
+
+    // Utility: Create film card HTML for one entry
+    function createFilmCard(film) {
+        return `
+      <div class="film-card">
+        <h4>${film.title} (${film.year})</h4>
+        <p><strong>Genre:</strong> ${capitalize(film.genre)}</p>
+        <p><strong>Total Score:</strong> ${film.totalScore.toFixed(1)} / 10</p>
+        <details>
+          <summary>Ratings breakdown</summary>
+          <ul>
+            <li>Feel / Impact: ${film.ratings.feel.toFixed(1)}</li>
+            <li>Storytelling: ${film.ratings.story.toFixed(1)}</li>
+            <li>Direction & Performances: ${film.ratings.direction.toFixed(1)}</li>
+            <li>Sound Design: ${film.ratings.sound.toFixed(1)}</li>
+            <li>Video Production: ${film.ratings.video.toFixed(1)}</li>
+          </ul>
+          <p><strong>Review:</strong> ${film.review ? film.review : "<em>No review provided</em>"}</p>
+        </details>
+      </div>
+    `;
+    }
+
+    // Capitalize helper
+    function capitalize(str) {
+        if (!str) return "";
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Sort by totalScore descending
+    entries.sort((a, b) => b.totalScore - a.totalScore);
+
+    // Render top 100 highest rated (or fewer if less entries)
+    const top100 = entries.slice(0, 100);
+    top100List.innerHTML = top100.map(createFilmCard).join("");
+
+    // Function to get top 10 by genre
+    function topByGenre(genre) {
+        return entries.filter(f => f.genre === genre).slice(0, 10);
+    }
+
+    genreDrama.innerHTML = topByGenre("drama").map(createFilmCard).join("") || "<p>No Drama films logged.</p>";
+    genreComedy.innerHTML = topByGenre("comedy").map(createFilmCard).join("") || "<p>No Comedy films logged.</p>";
+    genreHorror.innerHTML = topByGenre("horror").map(createFilmCard).join("") || "<p>No Horror films logged.</p>";
+    genreAction.innerHTML = topByGenre("action").map(createFilmCard).join("") || "<p>No Action films logged.</p>";
+    genreScifi.innerHTML = topByGenre("sci-fi").map(createFilmCard).join("") || "<p>No Sci-Fi films logged.</p>";
+
+    // Render all logged films (most recent first)
+    allFilmsList.innerHTML = entries
+        .slice()
+        .reverse()
+        .map(createFilmCard)
+        .join("");
+
+    // Toggle buttons for showing/hiding lists
+    document.querySelectorAll(".toggle-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const targetId = btn.getAttribute("data-target");
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            if (target.style.display === "none" || !target.style.display) {
+                target.style.display = "block";
+                btn.textContent = "Hide";
+            } else {
+                target.style.display = "none";
+                btn.textContent = "Show";
+            }
+        });
+    });
+
+    // Initially hide all lists except "All Logged Films"
+    ["top100-list", "genre-drama", "genre-comedy", "genre-horror", "genre-action", "genre-scifi"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = "none";
+    });
+});

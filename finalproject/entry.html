@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Add a film entry to Popcorn Film Diary." />
+    <meta name="author" content="Edward Badiola" />
+    <title>Add Entry | Popcorn Film Diary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="images/logo.svg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)" />
+</head>
+
+<body class="entry-page">
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.svg" alt="Popcorn Film Diary Logo" />
+        </div>
+        <nav>
+            <button id="menu">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="entry.html" class="active">Add Entry</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="film-form" class="form-container">
+            <h1>Log a Film</h1>
+
+            <!-- Title and Year -->
+            <div class="form-group">
+                <label for="title">Film Title:</label>
+                <input type="text" id="title" name="title" required />
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year Released:</label>
+                <input type="number" id="year" name="year" required min="1950" max="2025" />
+            </div>
+
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre" required>
+                    <option value="" disabled selected>Select a genre</option>
+                    <option value="horror">Horror</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="action">Action</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                </select>
+            </div>
+
+            <h2>Rate the Following (0.0–2.0)</h2>
+
+            <div class="form-group">
+                <label for="feel">Feel / Impact:</label>
+                <input type="range" id="feel" name="feel" min="0" max="2" step="0.1" value="1"
+                    oninput="document.getElementById('feel-value').textContent = this.value" />
+                <span id="feel-value">1.0</span>
+            </div>
+
+            <div class="form-group">
+                <label for="story">Storytelling:</label>
+                <input type="range" id="story" name="story" min="0" max="2" step="0.1" value="1"
+                    oninput="document.getElementById('story-value').textContent = this.value" />
+                <span id="story-value">1.0</span>
+            </div>
+
+            <div class="form-group">
+                <label for="direction">Direction & Performances:</label>
+                <input type="range" id="direction" name="direction" min="0" max="2" step="0.1" value="1"
+                    oninput="document.getElementById('direction-value').textContent = this.value" />
+                <span id="direction-value">1.0</span>
+            </div>
+
+            <div class="form-group">
+                <label for="sound">Sound Design:</label>
+                <input type="range" id="sound" name="sound" min="0" max="2" step="0.1" value="1"
+                    oninput="document.getElementById('sound-value').textContent = this.value" />
+                <span id="sound-value">1.0</span>
+            </div>
+
+            <div class="form-group">
+                <label for="video">Video Production:</label>
+                <input type="range" id="video" name="video" min="0" max="2" step="0.1" value="1"
+                    oninput="document.getElementById('video-value').textContent = this.value" />
+                <span id="video-value">1.0</span>
+            </div>
+
+            <!-- Short Review -->
+            <div class="form-group">
+                <label for="review">Short Review (Optional):</label>
+                <textarea id="review" name="review" rows="4" placeholder="Share your thoughts..."></textarea>
+            </div>
+
+            <button type="submit">Submit Entry</button>
+        </form>
+    </main>
+
+    <!-- Dialog markup -->
+    <dialog id="entryDialog" style="max-width: 600px; padding: 1.5rem; border-radius: 10px;">
+        <pre id="dialogContent" style="white-space: pre-wrap; font-family: monospace;"></pre>
+        <div style="margin-top: 1rem; text-align: center;">
+            <button id="confirmBtn" style="margin-right: 1rem; padding: 0.5rem 1rem;">Confirm</button>
+            <button id="cancelBtn" style="padding: 0.5rem 1rem;">Cancel</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Popcorn Film Diary</strong></p>
+            <p>Email: info@popcorndiariess.ph</p>
+            <p>Phone: (055) 560-1234</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/edbadiola" target="_blank">
+                <img src="images/github.svg" alt="GitHub profile of Edward Badiola" />
+            </a>
+            <a href="https://www.linkedin.com/in/ed-badiola-10a037253/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook" />
+            </a>
+        </div>
+        <p>WDD231 Class Final Project | Edward Badiola</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("film-form");
+        const dialog = document.getElementById("entryDialog");
+        const dialogContent = document.getElementById("dialogContent");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const confirmBtn = document.getElementById("confirmBtn");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (!form.reportValidity()) return;
+
+            const data = {
+                title: form.title.value.trim(),
+                year: Number(form.year.value),
+                genre: form.genre.value,
+                ratings: {
+                    feel: parseFloat(form.feel.value),
+                    story: parseFloat(form.story.value),
+                    direction: parseFloat(form.direction.value),
+                    sound: parseFloat(form.sound.value),
+                    video: parseFloat(form.video.value),
+                },
+                review: form.review.value.trim(),
+            };
+
+            data.totalScore = Object.values(data.ratings).reduce((a, b) => a + b, 0);
+
+            dialogContent.textContent =
+                `Title: ${data.title}
+Year Released: ${data.year}
+Genre: ${capitalize(data.genre)}
+
+Ratings (0.0 - 2.0 each):
+- Feel / Impact: ${data.ratings.feel.toFixed(1)}
+- Storytelling: ${data.ratings.story.toFixed(1)}
+- Direction & Performances: ${data.ratings.direction.toFixed(1)}
+- Sound Design: ${data.ratings.sound.toFixed(1)}
+- Video Production: ${data.ratings.video.toFixed(1)}
+
+Total Score (out of 10): ${data.totalScore.toFixed(1)}
+
+Short Review:
+${data.review || "(No review provided)"}
+`;
+
+            dialog.showModal();
+
+            confirmBtn.onclick = () => {
+                saveEntry(data);
+                dialog.close();
+                alert("Entry saved!");
+                form.reset();
+                resetRatingDisplays();
+            };
+
+            cancelBtn.onclick = () => {
+                dialog.close();
+            };
+        });
+
+        function resetRatingDisplays() {
+            ["feel", "story", "direction", "sound", "video"].forEach((id) => {
+                const input = form[id];
+                const span = document.getElementById(id + "-value");
+                span.textContent = input.value;
+            });
+        }
+
+        function saveEntry(entry) {
+            let entries = JSON.parse(localStorage.getItem("filmEntries") || "[]");
+            entries.push(entry);
+            localStorage.setItem("filmEntries", JSON.stringify(entries));
+        }
+
+        function capitalize(str) {
+            if (!str) return "";
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    </script>
+</body>
+
+</html>

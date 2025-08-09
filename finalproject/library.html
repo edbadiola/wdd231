@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse your logged films in the Popcorn Film Diary library." />
+    <meta name="author" content="Edward Badiola" />
+    <title>Library | Popcorn Film Diary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.svg" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)" />
+
+    <script src="scripts/scripts.js" defer></script>
+</head>
+
+<body class="library-page">
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.svg" alt="Popcorn Film Diary Logo" />
+        </div>
+        <nav>
+            <button id="menu">☰</button>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="entry.html">Add Entry</a></li>
+                <li><a href="library.html" class="active">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Film Library</h1>
+        <p>Browse your rated films — from your top favorites to all-time logs.</p>
+
+        <!-- Top 100 Highest Rated -->
+        <section class="library-section">
+            <header>
+                <h2>Top 100 Highest Rated</h2>
+                <button class="toggle-btn" data-target="top100-list">Show</button>
+            </header>
+            <div class="cascade-list" id="top100-list"></div>
+        </section>
+
+        <!-- Genre Top 10 (5 Genres) -->
+        <section class="library-section">
+            <h2>Genres Top 10</h2>
+
+            <div class="genre-block">
+                <header>
+                    <h3>Drama</h3>
+                    <button class="toggle-btn" data-target="genre-drama">Show</button>
+                </header>
+                <div class="cascade-list" id="genre-drama"></div>
+            </div>
+
+            <div class="genre-block">
+                <header>
+                    <h3>Comedy</h3>
+                    <button class="toggle-btn" data-target="genre-comedy">Show</button>
+                </header>
+                <div class="cascade-list" id="genre-comedy"></div>
+            </div>
+
+            <div class="genre-block">
+                <header>
+                    <h3>Horror</h3>
+                    <button class="toggle-btn" data-target="genre-horror">Show</button>
+                </header>
+                <div class="cascade-list" id="genre-horror"></div>
+            </div>
+
+            <div class="genre-block">
+                <header>
+                    <h3>Action</h3>
+                    <button class="toggle-btn" data-target="genre-action">Show</button>
+                </header>
+                <div class="cascade-list" id="genre-action"></div>
+            </div>
+
+            <div class="genre-block">
+                <header>
+                    <h3>Sci-Fi</h3>
+                    <button class="toggle-btn" data-target="genre-scifi">Show</button>
+                </header>
+                <div class="cascade-list" id="genre-scifi"></div>
+            </div>
+        </section>
+
+        <!-- All Logged Films -->
+        <section class="library-section">
+            <header>
+                <h2>All Logged Films</h2>
+                <button class="toggle-btn" data-target="all-films-list">Show</button>
+            </header>
+            <div class="cascade-list" id="all-films-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Popcorn Film Diary</strong></p>
+            <p>Email: info@popcorndiariess.ph</p>
+            <p>Phone: (055) 560-1234</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/edbadiola" target="_blank">
+                <img src="images/github.svg" alt="GitHub profile of Edward Badiola">
+            </a>
+            <a href="https://www.linkedin.com/in/ed-badiola-10a037253/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="#">
+                <img src="images/facebook.svg" alt="Facebook">
+            </a>
+        </div>
+        <p>WDD231 Class Final Project | Edward Badiola</p>
+    </footer>
+</body>
+
+</html>
